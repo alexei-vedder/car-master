@@ -1,0 +1,8 @@
+{
+    "name": "car-master",
+    "version": "1.0.0",
+    "scripts": {},
+    "dependencies": {
+        "normalize.css": "^8.0.1"
+    }
+}
