@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+address {
+    font-style: normal;
+}
+
+p {
+    margin: 0;
+}
+
+button {
+    border: none;
+}

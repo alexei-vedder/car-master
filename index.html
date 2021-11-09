@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1160, initial-scale=1.0">
+    <link rel="stylesheet" href="fonts/fonts.css">
     <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet/less" type="text/css" href="main.less" />
@@ -13,7 +14,91 @@
 </head>
 
 <body>
-    <header></header>
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__main-logo">
+                <span>Car</span>
+                <span>Master</span>
+            </div>
+            <nav class="header__navigation">
+                <ul class="header__navigation-list">
+                    <li class="header__navigation-item">Услуги и сервис</li>
+                    <li class="header__navigation-item">О компании</li>
+                    <li class="header__navigation-item">Отзывы</li>
+                    <li class="header__navigation-item">Блог</li>
+                </ul>
+            </nav>
+            <div class="header__address-dropdown">
+                <address class="header__address">
+                    <span class="header__phone">8 (917) 105-59-90</span><br />
+                    <span class="header__location">пр-кт Масленникова, 4/1</span>
+                </address>
+                <address class="header__address" style="display: none;">
+                    <span class="header__phone">8 (917) 138-00-08</span><br />
+                    <span class="header__location">22 партсъезда, 201, ст.1</span>
+                </address>
+            </div>
+            <button class="header__call-order-btn">Заказать звонок</button>
+        </div>
+    </header>
+    <main class="main">
+        <section class="service-summary">
+            <div class="service-swiper-wrapper">
+                <div class="service-swiper swiper">
+                    <div class="service-swiper__inner">
+                        <div class="service-swiper__left-arrow"></div>
+                        <div class="service-swiper__content">
+                            <div class="service-swiper__content-block swiper-content-block">
+                                <div class="service-swiper__content-info swiper-content-block__info">
+                                    <h2>
+                                        <p>Ремонт</p>
+                                        <p>и обслуживание</p>
+                                        <p>иномарок</p>
+                                    </h2>
+                                    <p>
+                                        <span>Вы <b>захотите</b></span><br>
+                                        <span>порекомендовать нас</span><br>
+                                        <span>друзьям.</span>
+                                    </p>
+                                    <button>Записаться</button>
+                                </div>
+                                <picture class="service-swiper__content-picture swiper-content-block__picture">
+                                    <img src="images/image-01.png" alt="Image isn't loaded">
+                                </picture>
+                            </div>
+                            <div class="service-swiper__content-block">
+
+                            </div>
+                        </div>
+                        <div class="service-swiper__right-arrow"></div>
+                    </div>
+                    <div class="service-swiper__indicators">
+                        <button class="service-swiper__indicator-btn"></button>
+                        <button class="service-swiper__indicator-btn"></button>
+                    </div>
+                </div>
+                <picture class="service-swiper-wrapper__background-01">
+                    <img src="images/image-02.png" alt="Image isn't loaded">
+                </picture>
+                 <object class="service-swiper-wrapper__background-02" data="images/vector-01.svg">
+                </object>
+                 <object class="service-swiper-wrapper__background-03" data="images/vector-02.svg">
+                </object>
+                
+            </div>
+            
+            <div class="service-list">
+                <div class="service-list__title-group">
+                    <h2>Услуги и сервис</h2>
+                    <div class="service-list__line"></div>
+                    <button class="service-list__go-to-catalog-btn">
+                        В каталог
+                        <div class="service-list__arrow-right"></div>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 
 </html>

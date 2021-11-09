@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+@font-face {
+    font-family: 'SONGER SemiExpanded';
+    font-style: normal;
+    font-weight: 400;
+    src: url(./SONGER™_SE_Regular.otf);
+}
+
+@font-face {
+    font-family: 'SONGER SemiExpanded';
+    font-style: normal;
+    font-weight: 500;
+    src: url(./SONGER™_SE_Regular.otf);
+}
