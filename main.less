@@ -5,6 +5,7 @@
 @color-05: #C4C4C4;
 @color-06: #000000;
 @color-07: #A1A1A1;
+@color-08: #F6F6F6;
 
 @page-screen-width: 1160px;
 @page-mobile-width: 375px;
@@ -512,6 +513,100 @@ html {
         .arrow(@color-01)
     }
 
+}
+
+.staff {
+    color: @color-01;
+    background-color: @color-08;
+
+    &__inner {
+        max-width: @page-screen-width;
+        width: 100%;
+        margin: 0 auto;
+        padding: 100px 0;
+    }
+
+    &__title {
+        .title();
+
+        color: @color-01;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 60px;
+
+        &::after {
+            content: "";
+            max-width: 440px;
+            width: 100%;
+            height: 0;
+            margin-left: 50px;
+            border: 1px solid @color-03;
+        }
+    }
+
+    &__content {
+        margin-bottom: 40px;
+    }
+
+    &__card {
+        max-width: 260px;
+        margin-right: 40px;
+    }
+
+    &__photo {
+        margin-bottom: 16px;
+
+        & > img {
+            max-width: 260px;
+        }
+    }
+
+    &__name {
+        text-transform: uppercase;
+        font-family: 'SONGER SemiExpanded';
+        margin-bottom: 5px;
+    }
+
+    &__post {
+        font-size: 16px;
+        line-height: 160%;
+    }
+
+    &__scroll-btns {
+        display: flex;
+    }
+    
+    &__left-btn,
+    &__right-btn {
+        .button;
+
+        width: 58px;
+        height: 58px;
+        border: 1px solid @color-06;
+
+        &--disabled {
+            border-color: @color-07;
+        }
+    }
+
+    &__arrow-left,
+    &__arrow-right {
+        display: block;
+        margin: auto;
+
+        .staff__left-btn--disabled > & {
+            stroke: @color-07;
+        }
+    }
+
+    &__arrow-left {
+        .arrow(@color-06, -135deg);
+    }
+
+    &__arrow-right {
+        .arrow(@color-06, 45deg);
+    }
 }
 
 .swiper {
