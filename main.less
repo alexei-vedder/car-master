@@ -10,30 +10,33 @@
 @page-screen-width: 1160px;
 @page-mobile-width: 375px;
 
+@default-font-size: 18px;
+
 html {
     color: @color-02;
     font-family: 'Inter', sans-serif;
-    font-size: 18px;
+    font-size: @default-font-size;
     letter-spacing: 0em;
 }
 
-.title(@font-size: 40px) {
-    font-size: @font-size;
-    text-transform: uppercase;
+.songer-font(@font-size: @default-font-size, @font-weight: 400) {
     font-family: 'SONGER SemiExpanded';
-    font-weight: 500;
+    text-transform: uppercase;
+    font-size: @font-size;
+    font-weight: @font-weight;
+}
+
+.title(@font-size: 40px) {
+    .songer-font(40px, 500);
 }
 
 .sub-title(@font-size: 30px) {
-    font-size: @font-size;
-    text-transform: uppercase;
-    font-family: 'SONGER SemiExpanded';
-    font-weight: 400;
+    .songer-font(@font-size);
 }
 
 .button {
-    text-transform: uppercase;
-    font-family: 'SONGER SemiExpanded';
+    .songer-font();
+
     cursor: pointer;
     transition-duration: 0.3s;
 }
@@ -71,9 +74,8 @@ html {
     }
 
     &__main-logo {
+        .songer-font(22px);
 
-        font-family: 'SONGER SemiExpanded';
-        font-size: 22px;
         margin-right: 20px;
         cursor: pointer;
 
@@ -499,9 +501,7 @@ html {
     &__read-more {
         display: flex;
         align-items: center;
-        text-transform: uppercase;
-        font-family: 'SONGER SemiExpanded';
-        font-weight: 500;
+        .songer-font(@default-font-size, 500);
         cursor: pointer;
 
         & > p {
@@ -563,8 +563,8 @@ html {
     }
 
     &__name {
-        text-transform: uppercase;
-        font-family: 'SONGER SemiExpanded';
+        .songer-font(@default-font-size);
+
         margin-bottom: 5px;
     }
 
@@ -609,8 +609,171 @@ html {
     }
 }
 
+.accomplishments {
+    padding: 100px 0;
+    background-color: @color-01;
+}
+
+.auto-service {
+    max-width: @page-screen-width;
+    margin: 0 auto 220px;
+
+    &__title {
+        .title();
+
+        color: @color-02;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 60px;
+
+        &::after {
+            content: "";
+            max-width: 814px;
+            width: 100%;
+            height: 0;
+            margin-left: 50px;
+            border: 1px solid @color-04;
+        }
+    }
+
+    &__main {
+        display: flex;
+        margin-bottom: 77px;
+        gap: 75px;
+    }
+
+    &__milestones-wrapper {
+        max-width: 460px;
+    }
+
+    &__milestones {
+    }
+    
+    &__milestone {
+        .songer-font(20px, 500);
+
+        display: flex;
+        align-items: center;
+        gap: 34px;
+        min-height: 64px;
+        margin-bottom: 20px;
+
+        
+        & > span {
+            .songer-font(64px, 500);
+            
+        }
+        &:last-of-type > span {
+            font-family: Inter;
+            color: @color-04;
+        }
+    }
+
+    &__note {
+        display: flex;
+        gap: 34px;
+        line-height: 160%;
+    }
+
+    &__note-separator {
+        flex: 0 0 61px;
+        background-color: transparent;
+        border-right: 1px solid @color-04;
+        position: relative;
+        top: 1.5em;
+    }
+
+    &__slider {
+        max-width: 700px;
+        width: 100%;
+    }
+
+    &__slick-slider {
+
+    }
+
+}
+
+.slider {
+    &__inner {
+        position: relative;
+    }
+
+    &__content {
+        border: 1px solid @color-02;
+        position: relative;
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: -13px;
+            left: -50px;
+            width: 152px;
+            height: 76px;
+            transform: rotate(45deg);
+            background-color: @color-01;
+            border-top: 1px solid @color-02;
+        }
+
+        & > picture {
+            overflow: hidden;
+        }
+    }
+
+    &__button-group {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    &__button-left,
+    &__button-right {
+        .button;
+
+        width: 58px;
+        height: 58px;
+    }
+    &__arrow-left,
+    &__arrow-right {
+        display: block;
+        margin: auto;
+    }
+
+    &__arrow-left {
+        .arrow(@color-06, -135deg);
+    }
+
+    &__arrow-right {
+        .arrow(@color-06, 45deg);
+    }
+}
+
+.slick-slider {
+    
+}
+
+.awards {
+    max-width: @page-screen-width;
+    margin: 0 auto;
+
+    &__title {
+        .title();
+
+        color: @color-02;
+        width: 100%;
+        margin-bottom: 80px;
+    }
+}
+
+.feedback {
+    max-width: @page-screen-width;
+    margin: 0 auto;
+}
+
 .swiper {
     .swiper-content-block {
-
     }
 }
