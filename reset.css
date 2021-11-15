@@ -27,6 +27,6 @@ h2, h3 {
     margin: 0;
 }
 
-picture {
+picture, img {
     display: block;
 }

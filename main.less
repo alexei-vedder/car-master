@@ -167,13 +167,6 @@ html {
         bottom: 0;
         width: 100%;
     }
-    
-    &__background-03 {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-    }
 }
 
 .service-swiper {
@@ -615,8 +608,14 @@ html {
 }
 
 .auto-service {
-    max-width: @page-screen-width;
-    margin: 0 auto 220px;
+    position: relative;
+    
+    &__inner {
+        max-width: @page-screen-width;
+        margin: 0 auto 220px;
+        position: relative;
+        z-index: 10;
+    }
 
     &__title {
         .title();
@@ -693,29 +692,29 @@ html {
 
     }
 
+    &__background {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
 }
 
 .slider {
+
+
     &__inner {
         position: relative;
+        overflow: hidden;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 100px 100%, 0 calc(100% - 100px), 0 0);
+        background-color: @color-02;
+        padding: 1px;
     }
 
     &__content {
-        border: 1px solid @color-02;
         position: relative;
-
-        &::after {
-            content: "";
-            display: block;
-            position: absolute;
-            bottom: -13px;
-            left: -50px;
-            width: 152px;
-            height: 76px;
-            transform: rotate(45deg);
-            background-color: @color-01;
-            border-top: 1px solid @color-02;
-        }
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 100px 100%, 0 calc(100% - 100px), 0 0);
 
         & > picture {
             overflow: hidden;
@@ -752,12 +751,18 @@ html {
 }
 
 .slick-slider {
-    
+
 }
 
 .awards {
-    max-width: @page-screen-width;
-    margin: 0 auto;
+    position: relative;
+
+    &__inner {
+        max-width: @page-screen-width;
+        margin: 0 auto;
+        position: relative;
+        z-index: 10;
+    }
 
     &__title {
         .title();
@@ -766,11 +771,103 @@ html {
         width: 100%;
         margin-bottom: 80px;
     }
+
+    &__background {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
 }
 
 .feedback {
-    max-width: @page-screen-width;
-    margin: 0 auto;
+    position: relative;
+
+    &__inner {
+        max-width: @page-screen-width;
+        margin: 0 auto;
+        position: relative;
+        z-index: 10;
+    }
+
+    &__title-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    &__title {
+        .title();
+        color: @color-02;
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        &::after {
+            content: "";
+            max-width: 654px;
+            width: 100%;
+            height: 0;
+            margin-left: 50px;
+            border: 1px solid @color-04;
+        }
+    }
+
+    &__yandex-logo {
+        margin-right: 30px;
+        max-width: 122px;
+    }
+
+    &__2gis-logo {
+        max-width: 91px;
+    }
+
+    &__note {
+        font-size: 20px;
+        line-height: 160%;
+        margin-bottom: 60px
+    }
+
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+    }
+
+    &__background {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
+.feedback-card {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    
+    &::after {
+        @size: 86px;
+        content: "";
+        position: absolute;
+        width: @size;
+        height: @size;
+        background-color: @color-01;
+        right: -(@size / 2);
+        bottom: -(@size / 2);
+        transform: rotate(45deg);
+    }
+    
+    &__date {
+        
+    }
+    
+    &__card {
+        min-height: 190px;
+        max-width: 960px;
+        background-color: @color-02;
+    }
 }
 
 .swiper {
