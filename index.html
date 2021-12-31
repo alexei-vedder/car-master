@@ -53,13 +53,13 @@
     </header>
     <main class="main">
         <section class="service-summary">
-            <div class="service-swiper-wrapper">
-                <div class="service-swiper swiper">
-                    <div class="service-swiper__inner">
-                        <div class="service-swiper__left-arrow"></div>
-                        <div class="service-swiper__content">
-                            <div class="service-swiper__content-block swiper-content-block">
-                                <div class="service-swiper__content-info swiper-content-block__info">
+            <div class="service-swiper swiper">
+                <div class="service-swiper__inner">
+                    <div class="service-swiper__left-arrow"></div>
+                    <div class="service-swiper__content">
+                        <div class="service-swiper__content-block">
+                            <div class="service-swiper__summary">
+                                <div class="service-swiper__info">
                                     <h2>
                                         <p>Ремонт</p>
                                         <p>и обслуживание</p>
@@ -72,31 +72,27 @@
                                     </p>
                                     <button>Записаться</button>
                                 </div>
-                                <picture class="service-swiper__content-picture swiper-content-block__picture">
-                                    <img src="images/image-01.png" alt="">
-                                </picture>
+                                <div class="service-swiper__indicators">
+                                    <button class="service-swiper__indicator-btn service-swiper__indicator-btn--active"></button>
+                                    <button class="service-swiper__indicator-btn"></button>
+                                </div>
                             </div>
-                            <div class="service-swiper__content-block">
-
-                            </div>
+                            <picture class="service-swiper__content-picture">
+                                <img src="images/image-01.png" alt="">
+                            </picture>
+                            <picture class="service-swiper__background-image">
+                                <img src="images/image-02.png" alt="">
+                            </picture>
                         </div>
-                        <div class="service-swiper__right-arrow"></div>
-                    </div>
-                    <div class="service-swiper__indicators">
-                        <div class="service-swiper__indicators-inner">
-                            <button
-                                class="service-swiper__indicator-btn service-swiper__indicator-btn--active"></button>
-                            <button class="service-swiper__indicator-btn"></button>
+                        <div class="service-swiper__content-block">
                         </div>
                     </div>
+                    <div class="service-swiper__right-arrow"></div>
                 </div>
-                <picture class="service-swiper-wrapper__background-01">
-                    <img src="images/image-02.png" alt="Image isn't loaded">
-                </picture>
-                <object class="service-swiper-wrapper__background-02" data="images/vector-01.svg">
+                <object class="service-swiper__background-shape" data="images/vector-01.svg">
                 </object>
             </div>
-
+            
             <div class="service-list">
                 <div class="service-list__title-group">
                     <h2>Услуги и сервис</h2>
@@ -396,7 +392,7 @@
                         <img class="slick-slider__item" src="images/slick-items/slick-item-06.svg" alt="">
                         <img class="slick-slider__item" src="images/slick-items/slick-item-07.svg" alt="">
                         <img class="slick-slider__item" src="images/slick-items/slick-item-08.svg" alt="">
-                    </div> 
+                    </div>
                 </div>
                 <object data="images/vector-02.svg" class="auto-service__background"></object>
             </div>
@@ -416,33 +412,49 @@
                     </div>
                     <p class="feedback__note">Только честные отзывы, размещённые в официальных источниках.</p>
                     <div class="feedback__cards">
-                        <div class="feedback__card-with-date feedback-card">
-                            <div class="feedback-card__date">
-                                <p class="feedback-card__date-month">2 июля</p>
-                                <p class="feedback-card__year">2021</p>
-                            </div>
+                        <div class="feedback__card-with-date feedback-card feedback-card--first">
+                            <p class="feedback-card__date">2 июля<br /><b>2021</b></p>
+                            <div class="feedback-card__timeline"></div>
                             <div class="feedback-card__card">
-                                <div class="feedback-card__title-group">
+                                <div class="feedback-card__summary">
                                     <p class="feedback-card__author">Игорь К.</p>
                                     <div class="feedback-card__divider"></div>
-                                    <object class="feedback-card__source" data="images/yandex-black-logo.svg"></object>
+                                    <img class="feedback-card__source" src="images/yandex-black-logo.svg"></img>
+                                    <div class="feedback-card__rate">
+                                        <object data="images/rate-star.svg" class="feedback-card__star"></object>
+                                        <object data="images/rate-star.svg" class="feedback-card__star"></object>
+                                        <object data="images/rate-star.svg" class="feedback-card__star"></object>
+                                        <object data="images/rate-star.svg" class="feedback-card__star"></object>
+                                        <object data="images/rate-star.svg" class="feedback-card__star"></object>
+                                    </div>
                                 </div>
-                                <p class="feedback-card__content"></p>
+                                <p class="feedback-card__message">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam nisi a ex ipsam. Modi, eius dignissimos perferendis officia, ipsa maiores placeat harum accusamus vitae odio, cupiditate nostrum! Sapiente facilis eaque placeat laboriosam, alias esse quo!
+                                </p>
+                            </div>
+                        </div> 
+                        <div class="feedback__card-with-date feedback-card feedback-card--last">
+                            <p class="feedback-card__date">9 июня<br /><b>2021</b></p>
+                            <div class="feedback-card__timeline"></div>
+                            <div class="feedback-card__card">
+                                <div class="feedback-card__summary">
+                                    <p class="feedback-card__author">Ольга Дичинская</p>
+                                    <div class="feedback-card__divider"></div>
+                                    <img class="feedback-card__source" src="images/yandex-black-logo.svg"></img>
+                                    <div class="feedback-card__rate">
+                                        <object data="images/rate-star.svg" class="feedback-card__star"></object>
+                                        <object data="images/rate-star.svg" class="feedback-card__star"></object>
+                                        <object data="images/rate-star.svg" class="feedback-card__star"></object>
+                                        <object data="images/rate-star.svg" class="feedback-card__star"></object>
+                                    </div>
+                                </div>
+                                <p class="feedback-card__message">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim eos, minima esse cum veritatis aperiam voluptate culpa dolorum facere illo quis ipsum ut suscipit voluptatibus nobis temporibus commodi nihil eum! Perferendis, eius ut commodi aspernatur, ipsam eum veniam, eveniet id cumque sed minima autem rem impedit ducimus aliquam eaque fugiat.
+                                </p>
                             </div>
                         </div>
-                        <div class="feedback__card-with-date feedback-card">
-                            <div class="feedback-card__date"></div>
-                            <div class="feedback-card__card"></div>
-                        </div>
-                        <div class="feedback__card-with-date feedback-card">
-                            <div class="feedback-card__date"></div>
-                            <div class="feedback-card__card"></div>
-                        </div>
-                        <div class="feedback__card-with-date feedback-card">
-                            <div class="feedback-card__date"></div>
-                            <div class="feedback-card__card"></div>
-                        </div>
                     </div>
+                    <button class="feedback__add-feedback-btn">Добавить отзыв</button>
                 </div>
                 <object data="images/vector-04.svg" class="feedback__background"></object>
             </div>

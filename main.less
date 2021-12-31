@@ -148,36 +148,14 @@ html {
     background-color: @color-01;
 }
 
-.service-swiper-wrapper {
-    position: relative;
-
-    &__background-01 {
-        position: absolute;
-        right: 0;
-        top: 0;
-
-        & > img {
-            width: 705px;
-        }
-    }
-    
-    &__background-02 {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-    }
-}
-
 .service-swiper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     position: relative;
     z-index: 50;
 
     &__inner {
         display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     &__left-arrow {
@@ -198,11 +176,14 @@ html {
         justify-content: space-between;
     }
 
-    &__content-info {
-
+    &__summary {
         margin-top: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 
-
+    &__info {
         & > h2 {
             .title(44px);
 
@@ -216,10 +197,10 @@ html {
             font-size: 20px;
             font-weight: 300;
             margin: 30px auto 56px;
+        }
 
-            & b {
-                font-weight: 500;
-            }
+        & b {
+            font-weight: 500;
         }
 
         & > button {
@@ -245,6 +226,7 @@ html {
         border-top: none;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 100px 100%, 0 calc(100% - 100px), 0 0);
         background-color: white;
+        z-index: 10;
 
         & > img {
             width: 460px;
@@ -252,11 +234,29 @@ html {
         }
     }
 
-    &__indicators {
-        width: @page-screen-width;
+    &__background-shape {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: -1;
     }
 
-    &__indicators-inner {
+    &__background-image {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 5;
+        height: 100%;
+        width: 30%;
+
+        & > img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__indicators {
         display: flex;
         align-self: start;
     }
@@ -602,7 +602,7 @@ html {
     
     &__inner {
         max-width: @page-screen-width;
-        margin: 0 auto 220px;
+        margin: 0 auto 140px;
         position: relative;
         z-index: 10;
     }
@@ -679,7 +679,7 @@ html {
     }
 
     &__slick-slider {
-
+        margin-bottom: 120px;
     }
 
     &__background {
@@ -692,8 +692,6 @@ html {
 }
 
 .slider {
-
-
     &__inner {
         position: relative;
         overflow: hidden;
@@ -772,6 +770,7 @@ html {
 
 .awards {
     position: relative;
+    padding: 100px 0 0 0;
 
     &__inner {
         max-width: @page-screen-width;
@@ -847,7 +846,7 @@ html {
     &__cards {
         display: flex;
         flex-direction: column;
-        row-gap: 40px;
+        margin-bottom: 50px;
     }
 
     &__background {
@@ -856,37 +855,119 @@ html {
         bottom: 0;
         width: 100%;
     }
+
+    &__add-feedback-btn {
+        .button();
+        font-size: 14px;
+        height: 62px;
+        width: 260px;
+        border: 1px solid @color-02;
+        color: @color-02;
+        background-color: transparent;
+        padding: 9px 16px 8px;
+        margin-left: 141px;
+
+        &:hover {
+            background-color: @color-02;
+            color: @color-01;
+        }
+    }
 }
 
 .feedback-card {
-    overflow: hidden;
-    position: relative;
+    @margin-between-cards: 40px;
+
     display: flex;
-    
-    &::after {
-        @size: 86px;
-        content: "";
-        position: absolute;
-        width: @size;
-        height: @size;
-        background-color: @color-01;
-        right: -(@size / 2);
-        bottom: -(@size / 2);
-        transform: rotate(45deg);
+    min-height: 190px;
+    position: relative;
+    margin-bottom: @margin-between-cards;
+
+
+    &--first {
+        .feedback-card__timeline {
+            height: 100%;
+            top: 0;
+        }
     }
-    
+
+    &--last {
+        margin-bottom: 0;
+    }
+
     &__date {
+        width: 200px;
+        white-space: nowrap;
+        margin-right: 14px;
+        text-align: end;
+        line-height: 1.4;
+        .songer-font(20px, 400);
+
+        & b {
+            .songer-font(20px, 500);
+        }
+    }
+
+    &__timeline {
+        height: calc(100% + @margin-between-cards);
+        width: 1px;
+        background-color: @color-02;
+        position: absolute;
+        left: 100px;
+        top: -@margin-between-cards;
         
+        &::after {
+            @size: 23px;
+            content: "";
+            display: block;
+            position: absolute;
+            width: @size;
+            height: @size;
+            border: solid 1px @color-02;
+            background-color: @color-04;
+            bottom: 0;
+            left: -(@size / 2) - 1px;
+        }
     }
     
     &__card {
-        min-height: 190px;
-        max-width: 960px;
         background-color: @color-02;
+        color: @color-01;
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 62px), calc(100% - 62px) 100%, 0 100%, 0 0);
+        padding: 30px 160px 40px 60px;
+        margin-left: 40px;
     }
-}
 
-.swiper {
-    .swiper-content-block {
+    &__summary {
+        display: flex;
+        min-height: 34px;
+        height: 1px; /* hack in order for children to be able to take height: 100% */
+        align-items: center;
+        gap: 25px;
+        margin-bottom: 10px
+    }
+
+    &__author {
+        font-weight: 600;
+        font-size: 24px;
+    }
+
+    &__divider {
+        height: 100%;
+        width: 2px;
+        background-color: @color-07;
+    }
+
+    &__source {
+        height: 100%;
+        position: relative;
+        top: -3px;
+    }
+
+    &__rate {
+        line-height: 1;
+    }
+
+    &__message {
+        line-height: 1.4;
     }
 }
